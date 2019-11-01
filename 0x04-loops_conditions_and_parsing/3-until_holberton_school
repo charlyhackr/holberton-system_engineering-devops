@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Prints HOlberton School using until loop
+mensaje=0
+until ((mensaje == 10));
+do
+	echo Holberton School
+	mensaje=$((mensaje+1))
+done
