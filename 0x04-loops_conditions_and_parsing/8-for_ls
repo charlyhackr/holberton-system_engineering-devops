@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Iterate through files in dir and parses them
+for list in *;
+do
+	echo "$list" | cut -d'-' -f2-
+done
