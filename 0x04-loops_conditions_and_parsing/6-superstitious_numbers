@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Prints 1-20 using while loop
+# Prints something unique n the 4th and 9th and 71th iterations
+mensaje=1
+while ((mensaje < 21));
+do
+	echo $mensaje
+	case "$mensaje" in
+	     4) echo bad luck from China ;;
+	     9) echo bad luck from Japan ;;
+	     17) echo bad luck from Italy ;;
+	esac
+	mensaje=$((mensaje+1))
+done
