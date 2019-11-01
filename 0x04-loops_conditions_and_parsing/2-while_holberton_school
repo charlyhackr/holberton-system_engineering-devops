@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Prints Holberton School 10 times with a while
+mensaje=0
+while ((mensaje < 10));
+do
+    echo Holberton School
+    mensaje=$((mensaje+1))
+done
