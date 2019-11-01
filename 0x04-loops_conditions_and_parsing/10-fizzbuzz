@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#FizzBUzz
+for ((a=1; a<=100; a++));
+do
+	if((a % 15 == 0));
+	then
+		echo FizzBuzz
+	elif((a % 5 == 0));
+	then
+		echo Buzz
+	elif((a % 3 == 0));
+	then
+		echo Fizz
+	else
+		echo $a
+	fi
+done
