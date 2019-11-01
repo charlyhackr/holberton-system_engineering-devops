@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#DIsplay HOlberton School 10 times but 9 say Hi
+mensaje=0
+while((mensaje < 10));
+do
+	if((mensaje==9));
+	then
+		echo Hi
+	fi
+		echo Holberton School
+	mensaje=$((mensaje+1))
+done
