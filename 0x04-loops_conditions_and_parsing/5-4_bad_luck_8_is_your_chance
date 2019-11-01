@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Prints loops  bad lock for 4th loop
+# Iteration good luck for the 8th loop and holberton shool
+# for the other iteration
+mensaje=0
+while((mensaje<10));
+do
+	if((mensaje==3));
+	then
+		echo bad luck
+	elif((mensaje==7));
+	then
+		echo good luck
+	else
+		echo Holberton School
+	fi
+	mensaje=$((mensaje+1))
+done
