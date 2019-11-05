@@ -5,8 +5,8 @@
 #include <sys/wait.h>
 
 /**
- * ciclo_infinto - RUn an infinte white loop
- *Return: ALways 0
+ * ciclo_infinito - RUn an infinte white loop
+ * Return: ALways 0
  */
 int ciclo_infinito(void)
 {
@@ -18,8 +18,8 @@ int ciclo_infinito(void)
 }
 
 /**
- * main * creates five zombie process.
- *Return: ALways 0.
+ * main - creates five zombie process.
+ * Return: ALways 0.
  */
 int main(void)
 {
@@ -43,4 +43,3 @@ int main(void)
 
 	return (EXIT_SUCCESS);
 }
-		
