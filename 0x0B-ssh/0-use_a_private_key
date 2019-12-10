@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# COnnet with ny holberton server
+ssh -i ~/.ssh/holberton ubuntu@35.237.56.150
