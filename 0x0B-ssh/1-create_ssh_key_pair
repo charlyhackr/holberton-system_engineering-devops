@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# CRaetyes new 4096-byte RSA key pair named holberton.
+ssh-keygen -b 4096 -N betty -f holberton
