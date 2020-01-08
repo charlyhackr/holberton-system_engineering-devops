@@ -7,8 +7,6 @@ global
 	user haproxy
 	group haproxy
 	daemon
-	maxconn 1024
-        tune.ssl.default-dh-param 2048
 
 	# Default SSL material locations
 	ca-base /etc/ssl/certs
@@ -37,17 +35,18 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 frontend www-http
-  bind *:80
-  reqadd X-Forwarded-Proto:\ http
-  default_backend web-backend
+	 bind *:80
+    	 reqadd X-Forwarded-Proto:\ http
+      	 default_backend web-backend
 
 frontend www-https
-  bind *:443 ssl crt /etc/haproxy/ssl/www.drsecure.tech.pem
-  reqadd X-Forwarded-Proto:\ https
-  default_backend web-backend
+	 bind *:443 ssl crt /etc/haproxy/ssl/www.drsecure.tech.pem
+	 redirect scheme https code 301 if !{ ssl_fc }
+	 reqadd X-Forwarded-Proto:\ https
+      	 default_backend web-backend
 
 backend web-backend
-  redirect scheme https if !{ ssl_fc }
-  balance roundrobin
-  server 930-web-01 35.237.56.150:80 check
-  server 930-web-02 34.74.206.144:80 check
+  	redirect scheme https code 301 if !{ ssl_fc }
+	balance roundrobin
+        server 930-web-01 35.237.56.150:80 check
+        server 930-web-02 34.74.206.144:80 check
