@@ -1,7 +1,5 @@
-# error php conf, a row says phpp and it must be php use sed -i to change this
-exec { 'change ext error':
-  command => '/bin/sed -i "s/phpp/php/g" /var/www/html/wp-settings.php':
-}
-exec { 'restart server':
-  command => 'sudo service apache2 restart'
+#fix config file
+exec { 'Correct file and restart':
+  command  => 'sudo sed -i \'s/.phpp/.php/\' /var/www/html/wp-settings.php && sudo service apache2 restart',
+  provider => shell,
 }
